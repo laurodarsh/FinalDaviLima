@@ -16,5 +16,10 @@ namespace ProjetoFinal
         {
             InitializeComponent();
         }
+
+        private void ProfileDetailsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
