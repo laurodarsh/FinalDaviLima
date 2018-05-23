@@ -46,10 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryDetailsForm.cs">
+    <Compile Include="Forms\CategoryAllForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoryDetailsForm.Designer.cs">
+    <Compile Include="Forms\CategoryAllForm.Designer.cs">
+      <DependentUpon>CategoryAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryDetailsForm.Designer.cs">
       <DependentUpon>CategoryDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -64,61 +70,103 @@
     <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogDetailsForm.cs">
+    <Compile Include="Forms\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogDetailsForm.Designer.cs">
-      <DependentUpon>LogDetailsForm.cs</DependentUpon>
+    <Compile Include="Forms\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductDetailsForm.cs">
+    <Compile Include="Forms\ProductAllForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductDetailsForm.Designer.cs">
+    <Compile Include="Forms\ProductAllForm.Designer.cs">
+      <DependentUpon>ProductAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductDetailsForm.Designer.cs">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfileDetailsForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfileDetailsForm.Designer.cs">
-      <DependentUpon>ProfileDetailsForm.cs</DependentUpon>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserAllForm.Designer.cs">
+      <DependentUpon>UserAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserProfileAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserProfileAllForm.Designer.cs">
+      <DependentUpon>UserProfileAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserProfileDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserProfileDetailsForm.Designer.cs">
+      <DependentUpon>UserProfileDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDetailsForm.cs">
+    <Compile Include="Forms\UserDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDetailsForm.Designer.cs">
+    <Compile Include="Forms\UserDetailsForm.Designer.cs">
       <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CategoryDetailsForm.resx">
+    <EmbeddedResource Include="Forms\CategoryAllForm.resx">
+      <DependentUpon>CategoryAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoryDetailsForm.resx">
       <DependentUpon>CategoryDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductDetailsForm.resx">
+    <EmbeddedResource Include="Forms\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductAllForm.resx">
+      <DependentUpon>ProductAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductDetailsForm.resx">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfileDetailsForm.resx">
-      <DependentUpon>ProfileDetailsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserAllForm.resx">
+      <DependentUpon>UserAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserProfileAllForm.resx">
+      <DependentUpon>UserProfileAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserProfileDetailsForm.resx">
+      <DependentUpon>UserProfileDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="UserDetailsForm.resx">
+    <EmbeddedResource Include="Forms\UserDetailsForm.resx">
       <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -132,17 +180,30 @@
     <Folder Include="Classes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\add.png" />
-    <Content Include="Icons\back.png" />
-    <Content Include="Icons\category.png" />
-    <Content Include="Icons\delete.png" />
-    <Content Include="Icons\edit.png" />
-    <Content Include="Icons\log.png" />
-    <Content Include="Icons\login.png" />
-    <Content Include="Icons\product.png" />
-    <Content Include="Icons\search.png" />
-    <Content Include="Icons\user profile.png" />
-    <Content Include="Icons\user.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\006-draw.png" />
+    <None Include="Resources\005-signs.png" />
+    <None Include="Resources\005-sign-out.png" />
+    <None Include="Resources\004-search.png" />
+    <None Include="Resources\004-left-arrow.png" />
+    <None Include="Resources\003-social.png" />
+    <None Include="Resources\003-notebook.png" />
+    <None Include="Resources\002-profile.png" />
+    <None Include="Resources\002-list-with-dots.png" />
+    <None Include="Resources\001-package.png" />
+    <None Include="Resources\001-delete.png" />
+    <Content Include="Resources\Icons\001-delete.png" />
+    <Content Include="Resources\Icons\001-package.png" />
+    <Content Include="Resources\Icons\002-list-with-dots.png" />
+    <Content Include="Resources\Icons\002-profile.png" />
+    <Content Include="Resources\Icons\003-notebook.png" />
+    <Content Include="Resources\Icons\003-social.png" />
+    <Content Include="Resources\Icons\004-left-arrow.png" />
+    <Content Include="Resources\Icons\004-search.png" />
+    <Content Include="Resources\Icons\005-sign-out.png" />
+    <Content Include="Resources\Icons\005-signs.png" />
+    <Content Include="Resources\Icons\006-draw.png" />
+    <Content Include="Resources\Icons\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
