@@ -8,7 +8,6 @@ namespace projetofinalPedroLima.Classes
 {
     public class Category
     {
-
        private int id = 0;
         private string name = "";
         private bool active;
