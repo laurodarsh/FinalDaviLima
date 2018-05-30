@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjetoFinal
 {
-    public partial class HomeForm : Form
+    public partial class ProductDetailsForm : Form
     {
-        public HomeForm()
+        public ProductDetailsForm()
         {
             InitializeComponent();
         }
 
-        private void pbxProduct_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

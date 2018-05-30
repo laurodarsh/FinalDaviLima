@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetoFinal
 {
-    public partial class HomeForm : Form
+    public partial class lbl : Form
     {
-        public HomeForm()
+        public lbl()
         {
             InitializeComponent();
-        }
-
-        private void pbxProduct_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
