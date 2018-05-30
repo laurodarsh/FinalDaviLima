@@ -1,10 +1,11 @@
-﻿using System;
+﻿using projetofinalPedroLima.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoFinal
+namespace projetofinalPedroLima
 {
     static class Program
     {
@@ -16,7 +17,7 @@ namespace ProjetoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new HomeForm());
         }
     }
 }

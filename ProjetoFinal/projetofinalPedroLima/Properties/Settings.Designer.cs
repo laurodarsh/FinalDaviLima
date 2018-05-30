@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoFinal.Properties
+namespace projetofinalPedroLima.Properties
 {
 
 
