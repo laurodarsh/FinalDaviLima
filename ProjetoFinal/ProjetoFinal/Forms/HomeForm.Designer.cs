@@ -50,7 +50,7 @@
             this.lblProduto.AutoSize = true;
             this.lblProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduto.Location = new System.Drawing.Point(70, 110);
+            this.lblProduto.Location = new System.Drawing.Point(61, 110);
             this.lblProduto.Name = "lblProduto";
             this.lblProduto.Size = new System.Drawing.Size(58, 17);
             this.lblProduto.TabIndex = 5;
@@ -62,7 +62,7 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(261, 110);
+            this.lblCategoria.Location = new System.Drawing.Point(256, 110);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(69, 17);
             this.lblCategoria.TabIndex = 6;
@@ -74,7 +74,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(456, 110);
+            this.lblUsuario.Location = new System.Drawing.Point(450, 110);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(57, 17);
             this.lblUsuario.TabIndex = 7;
@@ -86,7 +86,7 @@
             this.lblPerfil.AutoSize = true;
             this.lblPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerfil.Location = new System.Drawing.Point(182, 248);
+            this.lblPerfil.Location = new System.Drawing.Point(178, 248);
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(40, 17);
             this.lblPerfil.TabIndex = 8;
@@ -98,7 +98,7 @@
             this.lblLog.AutoSize = true;
             this.lblLog.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLog.Location = new System.Drawing.Point(382, 248);
+            this.lblLog.Location = new System.Drawing.Point(385, 248);
             this.lblLog.Name = "lblLog";
             this.lblLog.Size = new System.Drawing.Size(32, 17);
             this.lblLog.TabIndex = 9;
@@ -107,6 +107,7 @@
             // 
             // pbxCategory
             // 
+            this.pbxCategory.BackgroundImage = global::ProjetoFinal.Properties.Resources.category;
             this.pbxCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxCategory.Location = new System.Drawing.Point(242, 44);
@@ -120,6 +121,7 @@
             // 
             // pbxUser
             // 
+            this.pbxUser.BackgroundImage = global::ProjetoFinal.Properties.Resources.user;
             this.pbxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxUser.Location = new System.Drawing.Point(427, 44);
@@ -133,6 +135,7 @@
             // 
             // pbxProfile
             // 
+            this.pbxProfile.BackgroundImage = global::ProjetoFinal.Properties.Resources.profile;
             this.pbxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxProfile.Location = new System.Drawing.Point(148, 179);
@@ -146,6 +149,7 @@
             // 
             // pbxLog
             // 
+            this.pbxLog.BackgroundImage = global::ProjetoFinal.Properties.Resources.log;
             this.pbxLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxLog.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxLog.Location = new System.Drawing.Point(347, 179);
@@ -159,9 +163,10 @@
             // 
             // pbxProduct
             // 
+            this.pbxProduct.BackgroundImage = global::ProjetoFinal.Properties.Resources.product;
             this.pbxProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxProduct.Location = new System.Drawing.Point(44, 44);
+            this.pbxProduct.Location = new System.Drawing.Point(39, 44);
             this.pbxProduct.Name = "pbxProduct";
             this.pbxProduct.Size = new System.Drawing.Size(100, 50);
             this.pbxProduct.TabIndex = 0;

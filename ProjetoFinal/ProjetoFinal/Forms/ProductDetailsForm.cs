@@ -18,26 +18,51 @@ namespace ProjetoFinal
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pbxBack_Click(object sender, EventArgs e)
         {
             ProductAllForm productallform = new ProductAllForm();
             productallform.Show();
             this.Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pbxSave_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pbxDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbxBack_MouseEnter(object sender, EventArgs e)
+        {
+            pbxBack.BackColor = Color.Cyan;
+        }
+
+        private void pbxBack_MouseLeave(object sender, EventArgs e)
+        {
+            pbxBack.BackColor = Color.Transparent;
+        }
+
+        private void pbxSave_MouseEnter(object sender, EventArgs e)
+        {
+            pbxSave.BackColor = Color.Cyan;
+        }
+
+        private void pbxSave_MouseLeave(object sender, EventArgs e)
+        {
+            pbxSave.BackColor = Color.Transparent;
+        }
+
+        private void pbxDelete_MouseEnter(object sender, EventArgs e)
+        {
+            pbxDelete.BackColor = Color.Cyan;
+        }
+
+        private void pbxDelete_MouseLeave(object sender, EventArgs e)
+        {
+            pbxDelete.BackColor = Color.Transparent;
         }
     }
 }

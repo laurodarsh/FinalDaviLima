@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,24 +18,51 @@ namespace ProjetoFinal
             InitializeComponent();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            CategoryAllForm categoryAllForm = new CategoryAllForm();
+            categoryAllForm.Show();
+            this.Hide();
+        }
+
+        private void pbxSave_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void pbxDelete_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblActive_Click(object sender, EventArgs e)
+        private void pbxDelete_MouseEnter(object sender, EventArgs e)
         {
-
+            pbxDelete.BackColor = Color.Cyan;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void pbxDelete_MouseLeave(object sender, EventArgs e)
         {
+            pbxDelete.BackColor = Color.Transparent;
+        }
 
+        private void pbxSave_MouseEnter(object sender, EventArgs e)
+        {
+            pbxSave.BackColor = Color.Cyan;
+        }
+
+        private void pbxSave_MouseLeave(object sender, EventArgs e)
+        {
+            pbxSave.BackColor = Color.Transparent;
+        }
+
+        private void pbxBack_MouseEnter(object sender, EventArgs e)
+        {
+            pbxBack.BackColor = Color.Cyan;
+        }
+
+        private void pbxBack_MouseLeave(object sender, EventArgs e)
+        {
+            pbxBack.BackColor = Color.Transparent;
         }
     }
 }

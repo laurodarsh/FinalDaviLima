@@ -80,14 +80,17 @@
             // 
             // pbxDelete
             // 
-          
+            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources.delete;
             this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxDelete.Location = new System.Drawing.Point(412, 249);
             this.pbxDelete.Name = "pbxDelete";
-            this.pbxDelete.Size = new System.Drawing.Size(97, 50);
+            this.pbxDelete.Size = new System.Drawing.Size(84, 50);
             this.pbxDelete.TabIndex = 9;
             this.pbxDelete.TabStop = false;
+            this.pbxDelete.Click += new System.EventHandler(this.pbxDelete_Click);
+            this.pbxDelete.MouseEnter += new System.EventHandler(this.pbxDelete_MouseEnter);
+            this.pbxDelete.MouseLeave += new System.EventHandler(this.pbxDelete_MouseLeave);
             // 
             // pbxSave
             // 
@@ -99,17 +102,23 @@
             this.pbxSave.Size = new System.Drawing.Size(95, 50);
             this.pbxSave.TabIndex = 8;
             this.pbxSave.TabStop = false;
+            this.pbxSave.Click += new System.EventHandler(this.pbxSave_Click);
+            this.pbxSave.MouseEnter += new System.EventHandler(this.pbxSave_MouseEnter);
+            this.pbxSave.MouseLeave += new System.EventHandler(this.pbxSave_MouseLeave);
             // 
             // pbxBack
             // 
-        
+            this.pbxBack.BackgroundImage = global::ProjetoFinal.Properties.Resources.back;
             this.pbxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxBack.Location = new System.Drawing.Point(24, 249);
             this.pbxBack.Name = "pbxBack";
-            this.pbxBack.Size = new System.Drawing.Size(100, 50);
+            this.pbxBack.Size = new System.Drawing.Size(89, 50);
             this.pbxBack.TabIndex = 7;
             this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
+            this.pbxBack.MouseEnter += new System.EventHandler(this.pbxBack_MouseEnter);
+            this.pbxBack.MouseLeave += new System.EventHandler(this.pbxBack_MouseLeave);
             // 
             // UserProfileDetailsForm
             // 

@@ -18,13 +18,6 @@ namespace ProjetoFinal
             InitializeComponent();
         }
 
-        private void pbxProduct_Click(object sender, EventArgs e)
-        {
-            ProductAllForm productallform = new ProductAllForm();
-            productallform.Show();
-            this.Hide();
-        }
-
         private void pbxProduct_MouseEnter(object sender, EventArgs e)
         {
             pbxProduct.BackColor = Color.Cyan;
@@ -47,7 +40,6 @@ namespace ProjetoFinal
         {
             pbxCategory.BackColor = Color.Transparent;
             lblCategoria.Visible = false;
-
         }
 
         private void pbxUser_MouseEnter(object sender, EventArgs e)
@@ -84,7 +76,6 @@ namespace ProjetoFinal
         {
             pbxLog.BackColor = Color.Transparent;
             lblLog.Visible = false;
-
         }
 
         private void pbxCategory_Click(object sender, EventArgs e)
@@ -112,6 +103,13 @@ namespace ProjetoFinal
         {
             LogForm logform = new LogForm();
             logform.Show();
+            this.Hide();
+        }
+
+        private void pbxProduct_Click(object sender, EventArgs e)
+        {
+            ProductAllForm productallform = new ProductAllForm();
+            productallform.Show();
             this.Hide();
         }
     }

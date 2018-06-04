@@ -16,5 +16,82 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
         }
+
+        private void pbxSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new HomeForm();
+            homeForm.Show();
+            this.Hide();
+        }
+
+        private void pbxAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxSearch_MouseEnter(object sender, EventArgs e)
+        {
+            pbxSearch.BackColor = Color.Cyan;
+        }
+
+        private void pbxSearch_MouseLeave(object sender, EventArgs e)
+        {
+            pbxSearch.BackColor = Color.Transparent;
+        }
+
+        private void pbxDelete_MouseEnter(object sender, EventArgs e)
+        {
+            pbxDelete.BackColor = Color.Cyan;
+        }
+
+        private void pbxDelete_MouseLeave(object sender, EventArgs e)
+        {
+            pbxDelete.BackColor = Color.Transparent;
+        }
+
+        private void pbxEdit_MouseEnter(object sender, EventArgs e)
+        {
+            pbxEdit.BackColor = Color.Cyan;
+        }
+
+        private void pbxEdit_MouseLeave(object sender, EventArgs e)
+        {
+            pbxEdit.BackColor = Color.Transparent;
+        }
+
+        private void pbxAdd_MouseEnter(object sender, EventArgs e)
+        {
+            pbxAdd.BackColor = Color.Cyan;
+        }
+
+        private void pbxAdd_MouseLeave(object sender, EventArgs e)
+        {
+            pbxAdd.BackColor = Color.Transparent;
+        }
+
+        private void pbxBack_MouseEnter(object sender, EventArgs e)
+        {
+            pbxBack.BackColor = Color.Cyan;
+        }
+
+        private void pbxBack_MouseLeave(object sender, EventArgs e)
+        {
+            pbxBack.BackColor = Color.Transparent;
+        }
     }
 }
