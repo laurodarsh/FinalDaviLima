@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbxSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.pbxBack = new System.Windows.Forms.PictureBox();
             this.pbxSearch = new System.Windows.Forms.PictureBox();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
@@ -45,14 +45,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(477, 203);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // tbxSearch
-            // 
-            this.tbxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSearch.Location = new System.Drawing.Point(237, 8);
-            this.tbxSearch.Name = "tbxSearch";
-            this.tbxSearch.Size = new System.Drawing.Size(100, 26);
-            this.tbxSearch.TabIndex = 9;
             // 
             // lblSearch
             // 
@@ -92,6 +84,14 @@
             this.pbxSearch.MouseEnter += new System.EventHandler(this.pbxSearch_MouseEnter);
             this.pbxSearch.MouseLeave += new System.EventHandler(this.pbxSearch_MouseLeave);
             // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSearch.Location = new System.Drawing.Point(237, 8);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(100, 26);
+            this.tbxSearch.TabIndex = 9;
+            // 
             // LogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,7 +118,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pbxBack;
         private System.Windows.Forms.PictureBox pbxSearch;
-        private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox tbxSearch;
     }
 }

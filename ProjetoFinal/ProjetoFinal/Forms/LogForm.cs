@@ -12,6 +12,7 @@ namespace ProjetoFinal
 {
     public partial class LogForm : Form
     {
+        string search = "";
         public LogForm()
         {
             InitializeComponent();
@@ -47,6 +48,15 @@ namespace ProjetoFinal
         private void pbxSearch_MouseLeave(object sender, EventArgs e)
         {
             pbxSearch.BackColor = Color.Transparent;
+        }
+        void GetData()
+        {
+            search = tbxSearch.Text;
+
+        }
+        void CleanData()
+        {
+            tbxSearch.Text = "";
         }
     }
 }

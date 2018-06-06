@@ -12,6 +12,9 @@ namespace ProjetoFinal
 {
     public partial class LoginForm : Form
     {
+        string nome = "";
+        string senha = "";
+
         public LoginForm()
         {
             InitializeComponent();
@@ -27,6 +30,26 @@ namespace ProjetoFinal
             HomeForm homeform = new HomeForm();
             homeform.Show();
             this.Hide();
+        }
+
+        private void btnForgot_Click(object sender, EventArgs e)
+        {
+
+        }
+        void GetData()
+        {
+            nome = tbxNome.Text;
+            senha = tbxSenha.Text;
+        }
+        void CleanData()
+        {
+            tbxNome.Text = "";
+            tbxSenha.Text = "";
+        }
+
+        private void lblNome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

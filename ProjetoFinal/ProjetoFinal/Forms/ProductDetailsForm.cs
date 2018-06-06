@@ -11,8 +11,16 @@ using System.Windows.Forms;
 
 namespace ProjetoFinal
 {
+
+
     public partial class ProductDetailsForm : Form
     {
+        string name = "";
+        float price = 0;
+        string category = "";
+        bool active = false;
+
+
         public ProductDetailsForm()
         {
             InitializeComponent();
@@ -63,6 +71,28 @@ namespace ProjetoFinal
         private void pbxDelete_MouseLeave(object sender, EventArgs e)
         {
             pbxDelete.BackColor = Color.Transparent;
+        }
+        void GetData()
+        {
+            name = tbxName.Text;
+            price = float.Parse(tbxPrice.Text);
+            category = cmbCategory.Text;
+
+            if (cbxActive.Checked)
+            {
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+        }
+        void CleanData()
+        {
+            cmbCategory.SelectedIndex = 0;
+            tbxName.Text = "";
+            tbxPrice.Text = "";
+            cbxActive.Checked = false;
         }
     }
 }

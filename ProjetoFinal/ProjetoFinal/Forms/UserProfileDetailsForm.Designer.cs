@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.cbxActive = new System.Windows.Forms.CheckBox();
-            this.tbxNome = new System.Windows.Forms.TextBox();
+            this.tbxName = new System.Windows.Forms.TextBox();
             this.lblActive = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.pbxDelete = new System.Windows.Forms.PictureBox();
@@ -50,13 +50,13 @@
             this.cbxActive.TabIndex = 13;
             this.cbxActive.UseVisualStyleBackColor = true;
             // 
-            // tbxNome
+            // tbxName
             // 
-            this.tbxNome.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNome.Location = new System.Drawing.Point(185, 28);
-            this.tbxNome.Name = "tbxNome";
-            this.tbxNome.Size = new System.Drawing.Size(100, 25);
-            this.tbxNome.TabIndex = 12;
+            this.tbxName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxName.Location = new System.Drawing.Point(185, 28);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(100, 25);
+            this.tbxName.TabIndex = 12;
             // 
             // lblActive
             // 
@@ -126,7 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 311);
             this.Controls.Add(this.cbxActive);
-            this.Controls.Add(this.tbxNome);
+            this.Controls.Add(this.tbxName);
             this.Controls.Add(this.lblActive);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbxDelete);
@@ -145,7 +145,7 @@
         #endregion
 
         private System.Windows.Forms.CheckBox cbxActive;
-        private System.Windows.Forms.TextBox tbxNome;
+        private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.Label lblActive;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pbxDelete;

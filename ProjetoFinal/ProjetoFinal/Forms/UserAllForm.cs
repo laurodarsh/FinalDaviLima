@@ -12,6 +12,7 @@ namespace ProjetoFinal.Forms
 {
     public partial class UserAllForm : Form
     {
+        string search = "";
         public UserAllForm()
         {
             InitializeComponent();
@@ -83,5 +84,14 @@ namespace ProjetoFinal.Forms
         {
             pbxDelete.BackColor = Color.Transparent;
         }
+        void GetData()
+        {
+            search = tbxSearch.Text;
+        }
+        void CleanData()
+        {
+            tbxSearch.Text = "";
+        }
+
     }
 }

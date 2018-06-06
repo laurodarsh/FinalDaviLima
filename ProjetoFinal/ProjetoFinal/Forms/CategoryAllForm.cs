@@ -12,6 +12,7 @@ namespace ProjetoFinal.Forms
 {
     public partial class CategoryAllForm : Form
     {
+        string search = "";
         public CategoryAllForm()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace ProjetoFinal.Forms
 
         private void pbxAdd_Click(object sender, EventArgs e)
         {
+            CategoryDetailsForm categorydetailsform = new CategoryDetailsForm();
+            categorydetailsform.Show();
+            this.Hide();
+
 
         }
 
@@ -93,5 +98,15 @@ namespace ProjetoFinal.Forms
         {
             pbxBack.BackColor = Color.Transparent;
         }
+        void GetData()
+        {
+            search = tbxSearch.Text;
+
+        }
+        void CleanData()
+        {
+            tbxSearch.Text = "";
+        }
+        
     }
 }

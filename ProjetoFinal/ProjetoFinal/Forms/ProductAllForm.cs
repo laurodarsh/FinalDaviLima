@@ -12,6 +12,7 @@ namespace ProjetoFinal.Forms
 {
     public partial class ProductAllForm : Form
     {
+        string search = "";
         public ProductAllForm()
         {
             InitializeComponent();
@@ -96,6 +97,14 @@ namespace ProjetoFinal.Forms
         private void pbxDelete_MouseLeave(object sender, EventArgs e)
         {
             pbxDelete.BackColor = Color.Transparent;
+        }
+        void GetData()
+        {
+            search = tbxSearch.Text;
+        }
+        void CleanData()
+        {
+            tbxSearch.Text = "";
         }
     }
 }

@@ -32,7 +32,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.tbxSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxNome = new System.Windows.Forms.TextBox();
             this.btnForgot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -57,10 +57,11 @@
             this.lblNome.Size = new System.Drawing.Size(57, 18);
             this.lblNome.TabIndex = 1;
             this.lblNome.Text = "Nome :";
+            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
             // 
             // tbxSenha
             // 
-            this.tbxSenha.Location = new System.Drawing.Point(94, 45);
+            this.tbxSenha.Location = new System.Drawing.Point(98, 105);
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.Size = new System.Drawing.Size(100, 20);
             this.tbxSenha.TabIndex = 2;
@@ -75,12 +76,12 @@
             this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha :";
             // 
-            // textBox1
+            // tbxNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.tbxNome.Location = new System.Drawing.Point(98, 47);
+            this.tbxNome.Name = "tbxNome";
+            this.tbxNome.Size = new System.Drawing.Size(100, 20);
+            this.tbxNome.TabIndex = 4;
             // 
             // btnForgot
             // 
@@ -92,6 +93,7 @@
             this.btnForgot.TabIndex = 5;
             this.btnForgot.Text = "Esqueceu Senha";
             this.btnForgot.UseVisualStyleBackColor = true;
+            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
             // 
             // LoginForm
             // 
@@ -99,7 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 242);
             this.Controls.Add(this.btnForgot);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxNome);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.tbxSenha);
             this.Controls.Add(this.lblNome);
@@ -118,7 +120,7 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox tbxSenha;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxNome;
         private System.Windows.Forms.Button btnForgot;
     }
 }

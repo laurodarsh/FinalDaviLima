@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxLogin = new System.Windows.Forms.TextBox();
-            this.tbxSenha = new System.Windows.Forms.TextBox();
+            this.tbxName = new System.Windows.Forms.TextBox();
+            this.tbxPass = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.lblCSenha = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxCPass = new System.Windows.Forms.TextBox();
             this.cbxActive = new System.Windows.Forms.CheckBox();
             this.lblActive = new System.Windows.Forms.Label();
             this.lblProfile = new System.Windows.Forms.Label();
@@ -48,19 +48,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbxLogin
+            // tbxName
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(234, 34);
-            this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(100, 20);
-            this.tbxLogin.TabIndex = 0;
+            this.tbxName.Location = new System.Drawing.Point(234, 34);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(100, 20);
+            this.tbxName.TabIndex = 0;
             // 
-            // tbxSenha
+            // tbxPass
             // 
-            this.tbxSenha.Location = new System.Drawing.Point(234, 128);
-            this.tbxSenha.Name = "tbxSenha";
-            this.tbxSenha.Size = new System.Drawing.Size(100, 20);
-            this.tbxSenha.TabIndex = 1;
+            this.tbxPass.Location = new System.Drawing.Point(234, 128);
+            this.tbxPass.Name = "tbxPass";
+            this.tbxPass.Size = new System.Drawing.Size(100, 20);
+            this.tbxPass.TabIndex = 1;
             // 
             // lblLogin
             // 
@@ -109,12 +109,12 @@
             this.lblCSenha.TabIndex = 7;
             this.lblCSenha.Text = "Confirmar Senha :";
             // 
-            // textBox1
+            // tbxCPass
             // 
-            this.textBox1.Location = new System.Drawing.Point(234, 171);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.tbxCPass.Location = new System.Drawing.Point(234, 171);
+            this.tbxCPass.Name = "tbxCPass";
+            this.tbxCPass.Size = new System.Drawing.Size(100, 20);
+            this.tbxCPass.TabIndex = 8;
             // 
             // cbxActive
             // 
@@ -207,14 +207,14 @@
             this.Controls.Add(this.lblActive);
             this.Controls.Add(this.lblProfile);
             this.Controls.Add(this.cbxActive);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxCPass);
             this.Controls.Add(this.lblCSenha);
             this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.tbxSenha);
-            this.Controls.Add(this.tbxLogin);
+            this.Controls.Add(this.tbxPass);
+            this.Controls.Add(this.tbxName);
             this.Name = "lbl";
             this.Text = "Usuário";
             this.Load += new System.EventHandler(this.lbl_Load);
@@ -228,14 +228,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbxLogin;
-        private System.Windows.Forms.TextBox tbxSenha;
+        private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.TextBox tbxPass;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Label lblCSenha;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxCPass;
         private System.Windows.Forms.CheckBox cbxActive;
         private System.Windows.Forms.Label lblActive;
         private System.Windows.Forms.Label lblProfile;

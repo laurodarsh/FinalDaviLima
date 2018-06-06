@@ -12,6 +12,8 @@ namespace ProjetoFinal.Forms
 {
     public partial class UserProfileAllForm : Form
     {
+        string search = "";
+
         public UserProfileAllForm()
         {
             InitializeComponent();
@@ -92,6 +94,15 @@ namespace ProjetoFinal.Forms
         private void pbxSearch_MouseLeave(object sender, EventArgs e)
         {
             pbxSearch.BackColor = Color.Transparent;
+        }
+        void GetData()
+        {
+            search = tbxSearch.Text;
+
+        }
+        void CleanData()
+        {
+            tbxSearch.Text = "";
         }
     }
 }

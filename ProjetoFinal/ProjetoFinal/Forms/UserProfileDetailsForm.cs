@@ -12,6 +12,8 @@ namespace ProjetoFinal.Forms
 {
     public partial class UserProfileDetailsForm : Form
     {
+        string name = "";
+        bool active = false;
         public UserProfileDetailsForm()
         {
             InitializeComponent();
@@ -62,6 +64,25 @@ namespace ProjetoFinal.Forms
         private void pbxDelete_MouseLeave(object sender, EventArgs e)
         {
 
+        }
+        void GetData()
+        {
+            name = tbxName.Text;
+            if (cbxActive.Checked)
+            {
+                active = true;
+            }
+            else
+            {
+                active = true;
+            }
+
+          
+        }
+        void CleanData()
+        {
+            tbxName.Text = "";
+            cbxActive.Checked = false;
         }
     }
 }

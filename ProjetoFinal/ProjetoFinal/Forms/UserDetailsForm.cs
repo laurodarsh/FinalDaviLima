@@ -13,6 +13,14 @@ namespace ProjetoFinal
 {
     public partial class lbl : Form
     {
+        string name = "";
+        string email = "";
+        string pass = "";
+        string cpass = "";
+        string profile = "";
+        bool active = false;
+
+
         public lbl()
         {
             InitializeComponent();
@@ -68,6 +76,32 @@ namespace ProjetoFinal
         private void pbxDelete_MouseLeave(object sender, EventArgs e)
         {
             pbxDelete.BackColor = Color.Transparent;
+        }
+        void GetData()
+        {
+            name = tbxName.Text;
+            email = tbxEmail.Text;
+            pass = tbxPass.Text;
+            cpass = tbxCPass.Text;
+            profile = cmbProfile.Text;
+            if (cbxActive.Checked)
+            {
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+        }
+        void CleanData()
+        {
+            tbxName.Text = "";
+            tbxEmail.Text = "";
+            tbxPass.Text = "";
+            tbxCPass.Text = "";
+            cmbProfile.SelectedIndex = 0;
+            cbxActive.Checked = false;
+
         }
     }
 }
