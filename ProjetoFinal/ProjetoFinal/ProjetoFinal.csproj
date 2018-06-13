@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Category.cs" />
+    <Compile Include="Classes\Log.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserProfile.cs" />
     <Compile Include="Forms\CategoryAllForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,9 +175,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\save.png" />
     <None Include="Resources\006-draw.png" />

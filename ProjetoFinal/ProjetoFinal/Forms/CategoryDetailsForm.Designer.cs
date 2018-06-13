@@ -134,6 +134,7 @@
             this.Controls.Add(this.pbxBack);
             this.Name = "CategoryDetailsForm";
             this.Text = "Categoria";
+            this.Load += new System.EventHandler(this.CategoryDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();

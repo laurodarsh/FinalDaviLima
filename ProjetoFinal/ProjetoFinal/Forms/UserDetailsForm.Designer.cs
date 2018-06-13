@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinal
 {
-    partial class lbl
+    partial class UserDetailsForm
     {
         /// <summary>
         /// Required designer variable.

@@ -134,6 +134,7 @@
             this.Controls.Add(this.pbxBack);
             this.Name = "UserProfileDetailsForm";
             this.Text = "Perfil De Usuário";
+            this.Load += new System.EventHandler(this.UserProfileDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();

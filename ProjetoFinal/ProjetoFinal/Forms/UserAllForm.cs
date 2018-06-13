@@ -32,6 +32,10 @@ namespace ProjetoFinal.Forms
 
         private void pbxAdd_Click(object sender, EventArgs e)
         {
+            UserDetailsForm userdetailsform = new UserDetailsForm();
+            userdetailsform.Show();
+            this.Hide();
+
 
         }
 

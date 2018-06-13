@@ -112,5 +112,10 @@ namespace ProjetoFinal
             tbxNome.Text = "";
             cbxActive.Checked = false;
         }
+
+        private void CategoryDetailsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
