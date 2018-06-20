@@ -12,6 +12,12 @@ namespace ProjetoFinal.Classes
         private string name;
         private bool active;
 
+
+        public Category()
+        {
+
+        }
+
         public Category(string name, bool active)
         {
             this.name = name;

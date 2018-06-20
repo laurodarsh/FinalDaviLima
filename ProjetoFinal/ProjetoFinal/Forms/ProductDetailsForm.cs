@@ -31,6 +31,63 @@ namespace ProjetoFinal
             LoadComboBox();
 
         }
+        public ProductDetailsForm(int idProduct)
+        {
+
+            InitializeComponent();
+
+            lblID.Text = idProduct.ToString(); //-------
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            if (!string.IsNullOrEmpty(lblID.Text))
+            {
+                try
+                {
+                    //Conectar
+                    sqlConnect.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM PRODUCT WHERE ID = @id", sqlConnect);
+                    //SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY WHERE ID = " + idCategory.ToString(), sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", idProduct));
+
+                    Product product = new Product(); //------
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                    {
+                        while (reader.Read())
+                        {
+                            product.Id = Int32.Parse(reader["ID"].ToString());
+                            product.Name = reader["NAME"].ToString();
+                            product.Active = bool.Parse(reader["ACTIVE"].ToString());
+                            product.Price = float.Parse(reader["PRICE"].ToString());
+
+
+
+
+
+
+                        }
+                    }
+
+                    tbxName.Text = product.Name;
+                    cbxActive.Checked = product.Active;
+
+
+                }
+                catch (Exception EX)
+                {
+                    //Tratar exce??es
+                    throw;
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                }
+            }
+        }
         void LoadComboBox()
         {
             SqlConnection cn = new SqlConnection(connectionString);

@@ -35,6 +35,7 @@
             this.pbxDelete = new System.Windows.Forms.PictureBox();
             this.pbxSave = new System.Windows.Forms.PictureBox();
             this.pbxBack = new System.Windows.Forms.PictureBox();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
@@ -120,11 +121,21 @@
             this.pbxBack.MouseEnter += new System.EventHandler(this.pbxBack_MouseEnter);
             this.pbxBack.MouseLeave += new System.EventHandler(this.pbxBack_MouseLeave);
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(96, 158);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TabIndex = 14;
+            this.lblID.Visible = false;
+            // 
             // UserProfileDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 311);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.cbxActive);
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.lblActive);
@@ -152,5 +163,6 @@
         private System.Windows.Forms.PictureBox pbxDelete;
         private System.Windows.Forms.PictureBox pbxSave;
         private System.Windows.Forms.PictureBox pbxBack;
+        private System.Windows.Forms.Label lblID;
     }
 }

@@ -18,7 +18,10 @@ namespace ProjetoFinal.Classes
             this.name = name;
             this.active = active;
         }
+        public UserProfile()
+        {
 
+        }
         public int Id
         {
             get

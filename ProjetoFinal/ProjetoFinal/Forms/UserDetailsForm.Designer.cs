@@ -43,6 +43,7 @@
             this.pbxSave = new System.Windows.Forms.PictureBox();
             this.pbxBack = new System.Windows.Forms.PictureBox();
             this.pbxDelete = new System.Windows.Forms.PictureBox();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
@@ -103,7 +104,7 @@
             // 
             this.lblCSenha.AutoSize = true;
             this.lblCSenha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCSenha.Location = new System.Drawing.Point(93, 171);
+            this.lblCSenha.Location = new System.Drawing.Point(93, 174);
             this.lblCSenha.Name = "lblCSenha";
             this.lblCSenha.Size = new System.Drawing.Size(135, 18);
             this.lblCSenha.TabIndex = 7;
@@ -111,7 +112,7 @@
             // 
             // tbxCPass
             // 
-            this.tbxCPass.Location = new System.Drawing.Point(234, 171);
+            this.tbxCPass.Location = new System.Drawing.Point(234, 172);
             this.tbxCPass.Name = "tbxCPass";
             this.tbxCPass.Size = new System.Drawing.Size(100, 20);
             this.tbxCPass.TabIndex = 8;
@@ -195,11 +196,21 @@
             this.pbxDelete.MouseEnter += new System.EventHandler(this.pbxDelete_MouseEnter);
             this.pbxDelete.MouseLeave += new System.EventHandler(this.pbxDelete_MouseLeave);
             // 
-            // lbl
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(385, 188);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TabIndex = 18;
+            this.lblID.Visible = false;
+            // 
+            // UserDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 363);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.pbxDelete);
             this.Controls.Add(this.pbxBack);
             this.Controls.Add(this.pbxSave);
@@ -215,7 +226,7 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.tbxPass);
             this.Controls.Add(this.tbxName);
-            this.Name = "lbl";
+            this.Name = "UserDetailsForm";
             this.Text = "Usuário";
             this.Load += new System.EventHandler(this.lbl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();
@@ -243,5 +254,6 @@
         private System.Windows.Forms.PictureBox pbxSave;
         private System.Windows.Forms.PictureBox pbxBack;
         private System.Windows.Forms.PictureBox pbxDelete;
+        private System.Windows.Forms.Label lblID;
     }
 }

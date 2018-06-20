@@ -33,8 +33,9 @@
             this.pbxBack = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblActive = new System.Windows.Forms.Label();
-            this.tbxNome = new System.Windows.Forms.TextBox();
+            this.tbxName = new System.Windows.Forms.TextBox();
             this.cbxActive = new System.Windows.Forms.CheckBox();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
@@ -102,13 +103,13 @@
             this.lblActive.TabIndex = 4;
             this.lblActive.Text = "Ativo :";
             // 
-            // tbxNome
+            // tbxName
             // 
-            this.tbxNome.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNome.Location = new System.Drawing.Point(189, 44);
-            this.tbxNome.Name = "tbxNome";
-            this.tbxNome.Size = new System.Drawing.Size(100, 25);
-            this.tbxNome.TabIndex = 5;
+            this.tbxName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxName.Location = new System.Drawing.Point(189, 44);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(100, 25);
+            this.tbxName.TabIndex = 5;
             // 
             // cbxActive
             // 
@@ -120,13 +121,23 @@
             this.cbxActive.TabIndex = 6;
             this.cbxActive.UseVisualStyleBackColor = true;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(100, 166);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TabIndex = 7;
+            this.lblID.Visible = false;
+            // 
             // CategoryDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 311);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.cbxActive);
-            this.Controls.Add(this.tbxNome);
+            this.Controls.Add(this.tbxName);
             this.Controls.Add(this.lblActive);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbxDelete);
@@ -150,7 +161,8 @@
         private System.Windows.Forms.PictureBox pbxDelete;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblActive;
-        private System.Windows.Forms.TextBox tbxNome;
+        private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.CheckBox cbxActive;
+        private System.Windows.Forms.Label lblID;
     }
 }

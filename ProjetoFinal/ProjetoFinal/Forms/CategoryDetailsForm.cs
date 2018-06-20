@@ -1,4 +1,5 @@
-﻿using ProjetoFinal.Forms;
+﻿using ProjetoFinal.Classes;
+using ProjetoFinal.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,62 @@ namespace ProjetoFinal
         {
             InitializeComponent();
 
-           
+
+        }
+        public CategoryDetailsForm(int idCategory)
+        {
+
+            InitializeComponent();
+
+            lblID.Text = idCategory.ToString(); //-------
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            if (!string.IsNullOrEmpty(lblID.Text))
+            {
+                try
+                {
+                    //Conectar
+                    sqlConnect.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY WHERE ID = @id", sqlConnect);
+                    //SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY WHERE ID = " + idCategory.ToString(), sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", idCategory));
+
+                    Category category = new Category(); //------
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                    {
+                        while (reader.Read())
+                        {
+                            category.Id = Int32.Parse(reader["ID"].ToString());
+                            category.Name = reader["NAME"].ToString();
+                            category.Active = bool.Parse(reader["ACTIVE"].ToString());
+
+
+
+
+
+                        }
+                    }
+
+                    tbxName.Text = category.Name;
+                    cbxActive.Checked = category.Active;
+
+
+                }
+                catch (Exception EX)
+                {
+                    //Tratar exce??es
+                    throw;
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                }
+            }
         }
 
         private void pbxBack_Click(object sender, EventArgs e)
@@ -50,7 +106,7 @@ namespace ProjetoFinal
                 CleanData();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao adicionar categoria!" + ex.Message);
                 CleanData();
@@ -63,7 +119,36 @@ namespace ProjetoFinal
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(lblID.Text)) //-----
+            {
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
 
+
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE CATEGORY SET ACTIVE = @active WHERE ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", Int32.Parse(lblID.Text)));
+                    cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("categoria inativa!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao desativar esta categoria!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
+
+            }
         }
 
         private void pbxDelete_MouseEnter(object sender, EventArgs e)
@@ -97,7 +182,7 @@ namespace ProjetoFinal
         }
         void GetData()
         {
-            name = tbxNome.Text;
+            name = tbxName.Text;
             if (cbxActive.Checked)
             {
                 active = true;
@@ -109,7 +194,7 @@ namespace ProjetoFinal
         }
         void CleanData()
         {
-            tbxNome.Text = "";
+            tbxName.Text = "";
             cbxActive.Checked = false;
         }
 

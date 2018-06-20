@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,61 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
         }
+        public UserProfileDetailsForm(int idUser_Profile)
+        {
 
+            InitializeComponent();
+
+            lblID.Text = idUser_Profile.ToString(); //-------
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            if (!string.IsNullOrEmpty(lblID.Text))
+            {
+                try
+                {
+                    //Conectar
+                    sqlConnect.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM USER_PROFILE WHERE ID = @id", sqlConnect);
+                    //SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY WHERE ID = " + idCategory.ToString(), sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", idUser_Profile));
+
+                    UserProfile userProfile = new UserProfile(); //------
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                    {
+                        while (reader.Read())
+                        {
+                            userProfile.Id = Int32.Parse(reader["ID"].ToString());
+                            userProfile.Name = reader["NAME"].ToString();
+                            userProfile.Active = bool.Parse(reader["ACTIVE"].ToString());
+
+
+
+
+
+                        }
+                    }
+
+                    tbxName.Text = userProfile.Name;
+                    cbxActive.Checked = userProfile.Active;
+
+
+                }
+                catch (Exception EX)
+                {
+                    //Tratar exce??es
+                    throw;
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                }
+            }
+        }
         private void pbxBack_Click(object sender, EventArgs e)
         {
             UserProfileAllForm userProfileAllForm = new UserProfileAllForm();
@@ -60,7 +115,35 @@ namespace ProjetoFinal.Forms
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(lblID.Text)) //-----
+            {
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
 
+
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE USER_PROFILE SET ACTIVE = @active WHERE ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id",Int32.Parse(lblID.Text)));
+                    cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("perfil inativo!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao desativar este perfil!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
+            }
         }
 
         private void pbxBack_MouseEnter(object sender, EventArgs e)
@@ -104,7 +187,7 @@ namespace ProjetoFinal.Forms
                 active = true;
             }
 
-          
+
         }
         void CleanData()
         {
