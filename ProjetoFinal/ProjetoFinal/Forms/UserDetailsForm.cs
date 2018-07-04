@@ -54,7 +54,7 @@ namespace ProjetoFinal
                             user.Id = Int32.Parse(reader["ID"].ToString());
                             user.Name = reader["NAME"].ToString();
                             user.Password = reader["PASSWORD"].ToString();
-                            user.Email = reader["EMAIL"].ToString());
+                            user.Email = reader["EMAIL"].ToString();
                             user.Active = bool.Parse(reader["ACTIVE"].ToString());
                             user.UserProfile = new UserProfile
                             {
@@ -66,7 +66,16 @@ namespace ProjetoFinal
 
                     tbxName.Text = user.Name;
                     cbxActive.Checked = user.Active;
+                    tbxPass.Text = user.Password;                    
+                    tbxEmail.Text = user.Email;
+                    int indexCombo = 0;
+                    if (user.UserProfile != null)
+                    {
+                        indexCombo = user.UserProfile.Id;
+                    }
 
+                    //Inicializa o dropDown com as informações do banco
+                    InitializeComboBox(cmbProfile, indexCombo);
 
                 }
                 catch (Exception EX)
@@ -81,7 +90,37 @@ namespace ProjetoFinal
                 }
             }
         }
+        private void InitializeComboBox(ComboBox cmbProfile, int indexCombo)
+        {
+            cmbProfile.Items.Add("Selecione.. ");
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
 
+            try
+            {
+                //Conectar
+                sqlConnect.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM USER_PROFILE", sqlConnect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                {
+                    while (reader.Read())
+                    {
+                        cmbProfile.Items.Add(reader["NAME"].ToString());
+                    }
+                }
+
+                cmbProfile.SelectedItem = cmbProfile.Items[indexCombo];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("erro de acesso ao banco de dados. " + ex.Message);
+            }
+            finally
+            {
+                sqlConnect.Close();
+            }
+        }
         public UserDetailsForm()
         {
             InitializeComponent();
@@ -133,38 +172,78 @@ namespace ProjetoFinal
 
         private void pbxSave_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlConnect = new SqlConnection(connectionString);
-            try
+            if (string.IsNullOrEmpty(lblID.Text))
             {
-                GetData();
+                //Salvar
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
+                try
+                {
+                    GetData();
 
-                //Conectar
-                sqlConnect.Open();
-                string sql = "INSERT INTO [USER](NAME, PASSWORD, EMAIL,ACTIVE, FK_USERPROFILE) VALUES (@name, @password, @email, @active,@userprofile)";
+                    //Conectar
+                    sqlConnect.Open();
+                    string sql = "INSERT INTO [USER](NAME, PASSWORD, EMAIL,ACTIVE, FK_USERPROFILE) VALUES (@name, @password, @email, @active,@userprofile)";
 
-                SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
 
-                cmd.Parameters.Add(new SqlParameter("@name", name));
-                cmd.Parameters.Add(new SqlParameter("@password", pass));
-                cmd.Parameters.Add(new SqlParameter("@email", email));
-                cmd.Parameters.Add(new SqlParameter("@active", active));
-                cmd.Parameters.Add(new SqlParameter("@userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.Add(new SqlParameter("@name", name));
+                    cmd.Parameters.Add(new SqlParameter("@password", pass));
+                    cmd.Parameters.Add(new SqlParameter("@email", email));
+                    cmd.Parameters.Add(new SqlParameter("@active", active));
+                    cmd.Parameters.Add(new SqlParameter("@userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Adicionado com sucesso!");
-                CleanData();
+                    MessageBox.Show("Adicionado com sucesso!");
+                    CleanData();
 
+                }
+                catch (Exception ex)
+                {
+                    //Tratar exceções
+                    MessageBox.Show("Erro ao adicionar categoria!" + ex.Message);
+                    CleanData();
+                }
+                finally
+                {
+                    //Fechar
+                }
             }
-            catch (Exception ex)
+            else
             {
-                //Tratar exceções
-                MessageBox.Show("Erro ao adicionar categoria!" + ex.Message);
-                CleanData();
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE [USER] SET NAME = @name,PASSWORD = @password,EMAIL = @email, ACTIVE = @active, FK_USERPROFILE = @fk_userprofile Where ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@name", this.tbxName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@password", this.tbxPass.Text));
+                    cmd.Parameters.Add(new SqlParameter("@email", this.tbxEmail.Text));
+                    cmd.Parameters.Add(new SqlParameter("@active", this.cbxActive.Checked));
+                    cmd.Parameters.Add(new SqlParameter("@fk_userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Alterações salvas com sucesso!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao editar este usuário!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+
+                    HomeForm homeForm = new HomeForm();
+                    homeForm.Show();
+                    this.Hide();
+                }
             }
-            finally
-            {
-                //Fechar
-            }
+;
         }
 
         private void pbxDelete_Click(object sender, EventArgs e)

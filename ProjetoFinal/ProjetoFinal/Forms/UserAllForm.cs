@@ -53,7 +53,7 @@ namespace ProjetoFinal.Forms
         {
             dgvUser.Columns["ID"].Visible = false;
             dgvUser.Columns["NAME"].HeaderText = "Nome";
-            dgvUser.Columns["PASSWORD"].Visible =false ;
+            dgvUser.Columns["PASSWORD"].Visible = false;
             dgvUser.Columns["EMAIL"].HeaderText = "EMAIL";
             dgvUser.Columns["ACTIVE"].HeaderText = "Ativo";
             dgvUser.Columns["ACTIVE"].DisplayIndex = 5;
@@ -91,7 +91,10 @@ namespace ProjetoFinal.Forms
 
         private void pbxEdit_Click(object sender, EventArgs e)
         {
-
+            int idUser = Int32.Parse(dgvUser.SelectedRows[0].Cells[0].Value.ToString());
+            UserAllForm userallform = new UserAllForm();
+            userallform.Show();
+            this.Hide();
         }
 
         private void pbxDelete_Click(object sender, EventArgs e)
