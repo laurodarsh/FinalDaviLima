@@ -24,7 +24,63 @@ namespace ProjetoFinal
         bool active = false;
         List<UserProfile> profiles = new List<UserProfile>();
 
+        public UserDetailsForm(int idUser)
+        {
 
+            InitializeComponent();
+
+            lblID.Text = idUser.ToString(); //-------
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            if (!string.IsNullOrEmpty(lblID.Text))
+            {
+                try
+                {
+                    //Conectar
+                    sqlConnect.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM [USER] WHERE ID = @id", sqlConnect);
+                    //SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY WHERE ID = " + idCategory.ToString(), sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", idUser));
+
+                    User user = new User(); //------
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                    {
+                        while (reader.Read())
+                        {
+                            user.Id = Int32.Parse(reader["ID"].ToString());
+                            user.Name = reader["NAME"].ToString();
+                            user.Password = reader["PASSWORD"].ToString();
+                            user.Email = reader["EMAIL"].ToString());
+                            user.Active = bool.Parse(reader["ACTIVE"].ToString());
+                            user.UserProfile = new UserProfile
+                            {
+                                Id = Int32.Parse(reader["FK_USERPROFILE"].ToString())
+                            };
+
+                        }
+                    }
+
+                    tbxName.Text = user.Name;
+                    cbxActive.Checked = user.Active;
+
+
+                }
+                catch (Exception EX)
+                {
+                    //Tratar exce??es
+                    throw;
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                }
+            }
+        }
 
         public UserDetailsForm()
         {
@@ -113,7 +169,35 @@ namespace ProjetoFinal
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(lblID.Text)) //-----
+            {
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
 
+
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE [USER] SET ACTIVE = @active WHERE ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", Int32.Parse(lblID.Text)));
+                    cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("usuário inativo!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao desativar este usuário!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
+            }
         }
 
         private void pbxBack_MouseEnter(object sender, EventArgs e)
