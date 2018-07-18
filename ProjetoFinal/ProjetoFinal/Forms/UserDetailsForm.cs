@@ -28,7 +28,7 @@ namespace ProjetoFinal
         {
 
             InitializeComponent();
-
+            cmbProfile.DisplayMember = "NAME";
             lblID.Text = idUser.ToString(); //-------
 
             SqlConnection sqlConnect = new SqlConnection(connectionString);
@@ -106,11 +106,11 @@ namespace ProjetoFinal
                 {
                     while (reader.Read())
                     {
-                        cmbProfile.Items.Add(reader["NAME"].ToString());
+                        UserProfile p = new UserProfile(Int32.Parse(reader["ID"].ToString()), reader["NAME"].ToString(), bool.Parse(reader["ACTIVE"].ToString()));
+                        cmbProfile.Items.Add(p);
                     }
                 }
-
-                cmbProfile.SelectedItem = cmbProfile.Items[indexCombo];
+                
             }
             catch (Exception ex)
             {
@@ -194,6 +194,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
+                    Log.SalvarLog("perfil de usuário ativado", "inserção", DateTime.Now);
                     CleanData();
 
                 }
@@ -228,6 +229,9 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Alterações salvas com sucesso!");
+                    Log.SalvarLog("perfil de usuário editado", "edição", DateTime.Now);
+                    CleanData();
+
                 }
                 catch (Exception Ex)
                 {
@@ -266,6 +270,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("usuário inativo!");
+                    Log.SalvarLog("usuário desativado", "exclusão", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

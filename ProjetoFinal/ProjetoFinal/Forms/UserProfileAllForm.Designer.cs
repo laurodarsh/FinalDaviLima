@@ -90,7 +90,7 @@
             this.pbxEdit.BackgroundImage = global::ProjetoFinal.Properties.Resources.edit;
             this.pbxEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxEdit.Location = new System.Drawing.Point(360, 271);
+            this.pbxEdit.Location = new System.Drawing.Point(369, 271);
             this.pbxEdit.Name = "pbxEdit";
             this.pbxEdit.Size = new System.Drawing.Size(74, 38);
             this.pbxEdit.TabIndex = 12;

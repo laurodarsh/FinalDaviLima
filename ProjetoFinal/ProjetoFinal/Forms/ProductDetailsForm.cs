@@ -35,7 +35,7 @@ namespace ProjetoFinal
         {
 
             InitializeComponent();
-
+            cmbCategory.DisplayMember = "NAME";
             lblID.Text = idProduct.ToString(); //-------
 
             SqlConnection sqlConnect = new SqlConnection(connectionString);
@@ -109,11 +109,10 @@ namespace ProjetoFinal
                 {
                     while (reader.Read())
                     {
-                        cmbCategory.Items.Add(reader["NAME"].ToString());
+                        Category c = new Category(Int32.Parse(reader["ID"].ToString()), reader["NAME"].ToString(), bool.Parse(reader["ACTIVE"].ToString()));
+                        cmbCategory.Items.Add(c);
                     }
                 }
-
-                cmbCategory.SelectedItem = cmbCategory.Items[indexCombo];
             }
             catch (Exception ex)
             {
@@ -185,6 +184,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
+                    Log.SalvarLog("produto inserido", "inserção", DateTime.Now);
                     CleanData();
 
                 }
@@ -218,6 +218,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Alterações salvas com sucesso!");
+                    Log.SalvarLog("produto editado", "edição", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {
@@ -256,6 +257,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("produto inativo!");
+                    Log.SalvarLog("produto desativado", "exclusão", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

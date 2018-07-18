@@ -105,6 +105,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
+                    Log.SalvarLog("categoria inserida", "inserção", DateTime.Now);
                     CleanData();
 
                 }
@@ -136,6 +137,8 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Alterações salvas com sucesso!");
+                    Log.SalvarLog("categoria editada", "edição", DateTime.Now);
+                    CleanData();
                 }
                 catch (Exception Ex)
                 {
@@ -174,6 +177,7 @@ namespace ProjetoFinal
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("categoria inativa!");
+                    Log.SalvarLog("categoria desativada", "exclusão", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

@@ -102,6 +102,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
+                    Log.SalvarLog("perfil de usuário ativado", "inclusão", DateTime.Now);
                     CleanData();
 
                 }
@@ -132,6 +133,9 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Alterações salvas com sucesso!");
+                    Log.SalvarLog("perfil de usuário editado", "edição", DateTime.Now);
+                    CleanData();
+
                 }
                 catch (Exception Ex)
                 {
@@ -170,6 +174,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("perfil inativo!");
+                    Log.SalvarLog("perfil desativado", "exclusão", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

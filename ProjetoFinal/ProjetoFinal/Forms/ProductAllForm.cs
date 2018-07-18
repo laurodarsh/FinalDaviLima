@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -109,6 +110,7 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Produto inativo!");
+                Log.SalvarLog("produto desativado", "exclusão", DateTime.Now);
                 ShowData();
             }
             catch (Exception Ex)

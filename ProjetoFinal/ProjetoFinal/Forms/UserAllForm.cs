@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -116,6 +117,7 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Usuario inativo!");
+                Log.SalvarLog("usuário desativado", "exclusão", DateTime.Now);
                 ShowData();
             }
             catch (Exception Ex)
