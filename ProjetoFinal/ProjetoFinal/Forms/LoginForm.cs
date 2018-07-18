@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,8 @@ namespace ProjetoFinal
 {
     public partial class LoginForm : Form
     {
-        string nome = "";
-        string senha = "";
+        string name = "";
+        string pass = "";
 
         public LoginForm()
         {
@@ -27,19 +28,41 @@ namespace ProjetoFinal
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            HomeForm homeform = new HomeForm();
-            homeform.Show();
-            this.Hide();
-        }
+            if (CheckLogin(pass, name))
+            {
+                HomeForm homeform = new HomeForm();
+                homeform.Show();
+                this.Hide();
+            }
+            else
+            {
+                CleanData();
+                MessageBox.Show("Usuário ou senha incorretos!");
+            }
 
+          
+        }
+        private bool CheckLogin(string password, string name)
+        {
+            User user = UserHelper.SelectByName(name);
+
+            if (user != null)
+            {
+                if (UserHelper.Hash(password) == user.Password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         private void btnForgot_Click(object sender, EventArgs e)
         {
 
         }
         void GetData()
         {
-            nome = tbxNome.Text;
-            senha = tbxSenha.Text;
+            name = tbxNome.Text;
+            pass = tbxSenha.Text;
         }
         void CleanData()
         {
@@ -48,6 +71,11 @@ namespace ProjetoFinal
         }
 
         private void lblNome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxSenha_TextChanged(object sender, EventArgs e)
         {
 
         }

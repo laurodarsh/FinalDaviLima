@@ -60,8 +60,10 @@
             // 
             this.tbxPass.Location = new System.Drawing.Point(234, 128);
             this.tbxPass.Name = "tbxPass";
+            this.tbxPass.PasswordChar = '*';
             this.tbxPass.Size = new System.Drawing.Size(100, 20);
             this.tbxPass.TabIndex = 1;
+            this.tbxPass.TextChanged += new System.EventHandler(this.tbxPass_TextChanged);
             // 
             // lblLogin
             // 
@@ -114,6 +116,7 @@
             // 
             this.tbxCPass.Location = new System.Drawing.Point(234, 172);
             this.tbxCPass.Name = "tbxCPass";
+            this.tbxCPass.PasswordChar = '*';
             this.tbxCPass.Size = new System.Drawing.Size(100, 20);
             this.tbxCPass.TabIndex = 8;
             // 

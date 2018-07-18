@@ -339,5 +339,10 @@ namespace ProjetoFinal
             cbxActive.Checked = false;
 
         }
+
+        private void tbxPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -63,8 +63,10 @@
             // 
             this.tbxSenha.Location = new System.Drawing.Point(98, 105);
             this.tbxSenha.Name = "tbxSenha";
+            this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(100, 20);
             this.tbxSenha.TabIndex = 2;
+            this.tbxSenha.TextChanged += new System.EventHandler(this.tbxSenha_TextChanged);
             // 
             // lblSenha
             // 
