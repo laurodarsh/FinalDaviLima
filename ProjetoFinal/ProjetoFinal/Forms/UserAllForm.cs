@@ -76,8 +76,7 @@ namespace ProjetoFinal.Forms
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            HomeForm homeForm = new HomeForm();
-            homeForm.Show();
+          
             this.Hide();
         }
 
@@ -93,8 +92,8 @@ namespace ProjetoFinal.Forms
         private void pbxEdit_Click(object sender, EventArgs e)
         {
             int idUser = Int32.Parse(dgvUser.SelectedRows[0].Cells[0].Value.ToString());
-            UserAllForm userallform = new UserAllForm();
-            userallform.Show();
+            UserDetailsForm userDetailsForm = new UserDetailsForm(idUser);
+            userDetailsForm.Show();
             this.Hide();
         }
 

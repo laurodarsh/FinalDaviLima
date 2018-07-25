@@ -71,8 +71,7 @@ namespace ProjetoFinal.Forms
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            HomeForm homeform = new HomeForm();
-            homeform.Show();
+         
             this.Hide();
         }
 

@@ -13,6 +13,7 @@ namespace ProjetoFinal
 {
     public partial class LoginForm : Form
     {
+        User aux = new User();
         string name = "";
         string pass = "";
 
@@ -28,9 +29,10 @@ namespace ProjetoFinal
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            GetData();
             if (CheckLogin(pass, name))
             {
-                HomeForm homeform = new HomeForm();
+                HomeForm homeform = new HomeForm(aux);
                 homeform.Show();
                 this.Hide();
             }
@@ -45,7 +47,7 @@ namespace ProjetoFinal
         private bool CheckLogin(string password, string name)
         {
             User user = UserHelper.SelectByName(name);
-
+            aux = user;
             if (user != null)
             {
                 if (UserHelper.Hash(password) == user.Password)

@@ -1,4 +1,5 @@
-﻿using ProjetoFinal.Forms;
+﻿using ProjetoFinal.Classes;
+using ProjetoFinal.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,18 @@ namespace ProjetoFinal
         public HomeForm()
         {
             InitializeComponent();
+        }
+
+        public HomeForm(User aux)
+        {
+            InitializeComponent();
+            if(aux.UserProfile.Id != 1)
+            {
+                pbxLog.Visible = false;
+                pbxUser.Visible = false;
+                pbxProfile.Visible = false;
+
+            }
         }
 
         private void pbxProduct_MouseEnter(object sender, EventArgs e)
@@ -82,35 +95,35 @@ namespace ProjetoFinal
         {
             CategoryAllForm categoryallform = new CategoryAllForm();
             categoryallform.Show();
-            this.Hide();
+            
         }
 
         private void pbxUser_Click(object sender, EventArgs e)
         {
             UserAllForm userallform = new UserAllForm();
             userallform.Show();
-            this.Hide();
+          
         }
 
         private void pbxProfile_Click(object sender, EventArgs e)
         {
             UserProfileAllForm userprofileallform = new UserProfileAllForm();
             userprofileallform.Show();
-            this.Hide();
+          
         }
 
         private void pbxLog_Click(object sender, EventArgs e)
         {
             LogForm logform = new LogForm();
             logform.Show();
-            this.Hide();
+          
         }
 
         private void pbxProduct_Click(object sender, EventArgs e)
         {
             ProductAllForm productallform = new ProductAllForm();
             productallform.Show();
-            this.Hide();
+           
         }
     }
 }

@@ -81,7 +81,7 @@
             // 
             // pbxDelete
             // 
-            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources.delete;
+            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources._001_delete;
             this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxDelete.Location = new System.Drawing.Point(412, 249);
@@ -109,7 +109,7 @@
             // 
             // pbxBack
             // 
-            this.pbxBack.BackgroundImage = global::ProjetoFinal.Properties.Resources.back;
+            this.pbxBack.BackgroundImage = global::ProjetoFinal.Properties.Resources._004_left_arrow;
             this.pbxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxBack.Location = new System.Drawing.Point(24, 249);

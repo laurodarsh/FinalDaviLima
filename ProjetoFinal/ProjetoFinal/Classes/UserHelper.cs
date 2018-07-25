@@ -42,7 +42,7 @@ namespace ProjetoFinal.Classes
                         user.Password = reader["PASSWORD"].ToString();
                         user.UserProfile = new UserProfile
                         {
-                            Id = Int32.Parse(reader["FK_USER_PROFILE"].ToString())
+                            Id = Int32.Parse(reader["FK_USERPROFILE"].ToString())
                         };
                     }
                 }
